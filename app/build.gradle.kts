@@ -54,6 +54,7 @@ android {
 
 dependencies {
     val room_version = "2.6.1"
+    val nav_version = "2.7.7"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -71,17 +72,21 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // Compose
+    implementation(libs.androidx.compose.material3)
+
     // Room
     implementation("androidx.room:room-runtime:$room_version")
     // Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$room_version")
     ksp(libs.room.compiler)
 
-
     // Dagger hilt
     implementation("com.google.dagger:hilt-android:2.48")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
+
+    implementation("androidx.navigation:navigation-compose:$nav_version")
 }
 
 // Allow references to generated code
